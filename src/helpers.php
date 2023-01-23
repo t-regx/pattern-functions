@@ -13,3 +13,8 @@ function pattern_test(string $pattern, string $subject, string $modifiers = ''):
 {
     return Pattern::of($pattern, $modifiers)->test($subject);
 }
+
+function pattern_fails(string $pattern, string $subject, string $modifiers = ''): bool
+{
+    return Pattern::of($pattern, $modifiers)->fails($subject);
+}
