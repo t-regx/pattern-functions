@@ -29,3 +29,14 @@ function pattern_filter(string $pattern, array $subjects, string $modifiers = ''
 {
     return Pattern::of($pattern, $modifiers)->filter($subjects);
 }
+
+/**
+ * @param string $pattern
+ * @param string[] $subjects
+ * @param string $modifiers
+ * @return string[]
+ */
+function pattern_reject(string $pattern, array $subjects, string $modifiers = ''): array
+{
+    return Pattern::of($pattern, $modifiers)->reject($subjects);
+}
