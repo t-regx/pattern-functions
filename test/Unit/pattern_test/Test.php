@@ -1,5 +1,5 @@
 <?php
-namespace Test\pattern_test;
+namespace Test\Unit\pattern_test;
 
 use PHPUnit\Framework\TestCase;
 use TRegx\Exception\MalformedPatternException;

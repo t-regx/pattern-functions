@@ -18,3 +18,14 @@ function pattern_fails(string $pattern, string $subject, string $modifiers = '')
 {
     return Pattern::of($pattern, $modifiers)->fails($subject);
 }
+
+/**
+ * @param string $pattern
+ * @param string[] $subjects
+ * @param string $modifiers
+ * @return string[]
+ */
+function pattern_filter(string $pattern, array $subjects, string $modifiers = ''): array
+{
+    return Pattern::of($pattern, $modifiers)->filter($subjects);
+}
