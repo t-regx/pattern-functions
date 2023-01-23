@@ -8,3 +8,8 @@ if (!function_exists('pattern')) {
         return Pattern::of($pattern, $modifiers);
     }
 }
+
+function pattern_test(string $pattern, string $subject, string $modifiers = ''): bool
+{
+    return Pattern::of($pattern, $modifiers)->test($subject);
+}
