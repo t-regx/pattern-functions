@@ -28,6 +28,14 @@ function pattern_split(string $pattern, string $subject, string $modifiers = '')
 }
 
 /**
+ * @return string[]
+ */
+function pattern_cut(string $pattern, string $subject, string $modifiers = ''): array
+{
+    return Pattern::of($pattern, $modifiers)->cut($subject);
+}
+
+/**
  * @param string $pattern
  * @param string[] $subjects
  * @param string $modifiers
