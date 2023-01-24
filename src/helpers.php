@@ -24,6 +24,11 @@ function pattern_replace(string $pattern, string $subject, string $replacement, 
     return Pattern::of($pattern, $modifiers)->replace($subject)->with($replacement);
 }
 
+function pattern_replace_callback(string $pattern, string $subject, callable $callback, string $modifiers = ''): string
+{
+    return Pattern::of($pattern, $modifiers)->replace($subject)->callback($callback);
+}
+
 function pattern_prune(string $pattern, string $subject, string $modifiers = ''): string
 {
     return Pattern::of($pattern, $modifiers)->prune($subject);
