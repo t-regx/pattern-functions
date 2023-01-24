@@ -19,6 +19,11 @@ function pattern_fails(string $pattern, string $subject, string $modifiers = '')
     return Pattern::of($pattern, $modifiers)->fails($subject);
 }
 
+function pattern_prune(string $pattern, string $subject, string $modifiers = ''): string
+{
+    return Pattern::of($pattern, $modifiers)->prune($subject);
+}
+
 function pattern_count(string $pattern, string $subject, string $modifiers = ''): int
 {
     return Pattern::of($pattern, $modifiers)->count($subject);
