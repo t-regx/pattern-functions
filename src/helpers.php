@@ -25,6 +25,11 @@ function pattern_match_first(string $pattern, string $subject, string $modifiers
     return Pattern::of($pattern, $modifiers)->match($subject)->first();
 }
 
+function pattern_match_optional(string $pattern, string $subject, string $modifiers = ''): ?Detail
+{
+    return Pattern::of($pattern, $modifiers)->match($subject)->findFirst()->orReturn(null);
+}
+
 function pattern_replace(string $pattern, string $subject, string $replacement, string $modifiers = ''): string
 {
     return Pattern::of($pattern, $modifiers)->replace($subject)->with($replacement);
