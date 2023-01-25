@@ -41,6 +41,14 @@ function pattern_match_ref(string $pattern, string $subject, ?Detail &$refDetail
     return false;
 }
 
+/**
+ * @return Detail[]
+ */
+function pattern_match_all(string $pattern, string $subject, string $modifiers = ''): array
+{
+    return Pattern::of($pattern, $modifiers)->match($subject)->all();
+}
+
 function pattern_replace(string $pattern, string $subject, string $replacement, string $modifiers = ''): string
 {
     return Pattern::of($pattern, $modifiers)->replace($subject)->with($replacement);
