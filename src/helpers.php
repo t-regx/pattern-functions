@@ -1,5 +1,6 @@
 <?php
 
+use TRegx\CleanRegex\Match\Detail;
 use TRegx\CleanRegex\Pattern;
 
 if (!function_exists('pattern')) {
@@ -17,6 +18,11 @@ function pattern_test(string $pattern, string $subject, string $modifiers = ''):
 function pattern_fails(string $pattern, string $subject, string $modifiers = ''): bool
 {
     return Pattern::of($pattern, $modifiers)->fails($subject);
+}
+
+function pattern_match_first(string $pattern, string $subject, string $modifiers = ''): Detail
+{
+    return Pattern::of($pattern, $modifiers)->match($subject)->first();
 }
 
 function pattern_replace(string $pattern, string $subject, string $replacement, string $modifiers = ''): string
