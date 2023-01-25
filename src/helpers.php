@@ -30,6 +30,17 @@ function pattern_match_optional(string $pattern, string $subject, string $modifi
     return Pattern::of($pattern, $modifiers)->match($subject)->findFirst()->orReturn(null);
 }
 
+function pattern_match_ref(string $pattern, string $subject, ?Detail &$refDetail, string $modifiers = ''): bool
+{
+    $matcher = Pattern::of($pattern, $modifiers)->match($subject);
+    if ($matcher->test()) {
+        $refDetail = $matcher->first();
+        return true;
+    }
+    $refDetail = null;
+    return false;
+}
+
 function pattern_replace(string $pattern, string $subject, string $replacement, string $modifiers = ''): string
 {
     return Pattern::of($pattern, $modifiers)->replace($subject)->with($replacement);
