@@ -1,4 +1,8 @@
 {
+  "name": "pattern/functions",
+  "type": "library",
+  "description": "Set of helper functions for Pattern and regular expressions",
+  "license": "MIT",
   "autoload": {
     "files": [
       "src/helpers.php"
