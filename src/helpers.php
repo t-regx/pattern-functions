@@ -106,3 +106,19 @@ function pattern_reject(string $pattern, array $subjects, string $modifiers = ''
 {
     return Pattern::of($pattern, $modifiers)->reject($subjects);
 }
+
+/**
+ * @param string $pattern
+ * @param string $subject
+ * @param string $modifiers
+ * @return string[]
+ */
+function pattern_search(string $pattern, string $subject, string $modifiers = ''): array
+{
+    $matcher = Pattern::of($pattern, $modifiers)->match($subject);
+    $search = [];
+    foreach ($matcher as $match) {
+        $search[] = $match->text();
+    }
+    return $search;
+}
