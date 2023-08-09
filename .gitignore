@@ -1,6 +1,7 @@
 # Project
 .idea/
 *.iml
+.phpunit.result.cache
 
 # Composer
 vendor/
